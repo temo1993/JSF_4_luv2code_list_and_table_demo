@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Student Table Demo</title>
+    <h:outputStylesheet library="css" name="student_table_demo.css"/>
+</h:head>
+
+<h:body>
+    <h3>Student Table Demo</h3>
+    <hr/>
+    <br/>
+    <h:dataTable value="#{studentDataUtil.students}" var="tempStudent"
+                 styleClass="demo-table" headerClass="demo-table-header" rowClasses="demo-table-add-row,
+                 demo-table-even-row">
+
+        <h:column>
+            <!-- The column header -->
+            <f:facet name="header">First Name</f:facet>
+
+            <!-- The value for each row -->
+            <p>#{tempStudent.firstName}</p>
+        </h:column>
+
+
+        <h:column>
+            <!-- The column header -->
+            <f:facet name="header">Last Name</f:facet>
+
+            <!-- The value for each row -->
+            <p>#{tempStudent.lastName}</p>
+        </h:column>
+
+        <h:column>
+            <!-- The column header -->
+            <f:facet name="header">Email</f:facet>
+
+            <!-- The value for each row -->
+            <p>#{tempStudent.email}</p>
+        </h:column>
+    </h:dataTable>
+</h:body>
+</html>
